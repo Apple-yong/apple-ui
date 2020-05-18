@@ -1,10 +1,10 @@
 <template>
-        <button class="g-button">
+        <button class="g-button" :class="{[`icon-${iconPosition}`]: true}">
             <svg v-if="icon" class="icon" aria-hidden="true">
                 <use :xlink:href="` #i-${icon} `" ></use>
             </svg>
             <!-- 如果加了内容就要用slot显示 -->
-            <div class="content">
+            <div class="g-button-content">
                 <slot></slot>
             </div>
         </button>
@@ -26,6 +26,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+    @import "../styles/_var.scss";
     .icon {
         width: 1em;
         height: 1em;
@@ -34,47 +35,34 @@ export default {
         overflow: hidden;
     }
     .g-button{
-         --button-height: 32px;
-        --font-size: 14px;
-        --button-active-bg: #eee;
-        --border-radius: 4px;
-        --color: #333;
-        --border-color: #999;
-        --border-color-hover: #666;
-        font-size: var(--font-size);
-        height: var(--button-height);
+        font-size: $font-size; 
+        height: $button-height; 
         padding: 0 1em;
-        border-radius: var(--border-radius);
-        border: 1px solid var(--border-color);
-        background: var(--button-bg);
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        &:hover {
-            border-color: var(--border-color-hover);
-        }
-        &:active {
-            background-color: var(--button-active-bg);
-        }
-        &:focus {
-            outline: none;
-        }
-        > .icon{
-            order: 1;
-        }
-        > .content{
-            order: 2;
-        }
-        &.icon-right{
-            > .icon{
+        border-radius: $border-radius; 
+        border: 1px solid $border-color;
+        background: $button-bg;
+        display: inline-flex; justify-content: center; align-items: center;
+        vertical-align: middle;
+        &:hover { border-color: $border-color-hover; }
+        &:active { background-color: $button-active-bg; }
+        &:focus { outline: none; }
+        &.icon-left{
+            .icon{
+                margin-right: .3em;
+                order: 1;
+            }
+            .g-button-content{
                 order: 2;
             }
-            > .content{
+        }
+        &.icon-right{
+            .icon{
+                margin-left: .3em;
+                order: 2;
+            }
+            .g-button-content{
                 order: 1;
             }
         }
-    }
-    .content{
-        margin-left: .3em;
     }
 </style>

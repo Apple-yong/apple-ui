@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <gbutton icon="set">按钮</gbutton>
-    <gbutton icon="set"></gbutton>
-    <gbutton icon="set" ></gbutton>
-    <gbutton icon="set"></gbutton>
-    <gbutton icon="set" icon-position="left"></gbutton>
+    <gbutton icon="set" icon-position="right">按钮</gbutton>
+    <gbutton icon="set" icon-position="left">按钮</gbutton>
+    <gbutton icon="set" icon-position="right">按钮</gbutton>
+    <gbutton icon="set" icon-position="left">按钮</gbutton>
+    <gbutton icon="set" icon-position="left">按钮</gbutton>
   </div>
 </template>
 
@@ -23,5 +23,8 @@ export default {
 @import "assets/cssreset.css";
 #app {
     margin: 20px;
+    .g-button{
+      margin-right: .3em;
+    }
 }
 </style>
