@@ -1,22 +1,27 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <gbutton icon="set">按钮</gbutton>
+    <gbutton icon="set"></gbutton>
+    <gbutton icon="set" ></gbutton>
+    <gbutton icon="set"></gbutton>
+    <gbutton icon="set" icon-position="left"></gbutton>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import gbutton from "./components/button.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    gbutton
   }
 };
 </script>
 
 <style lang="scss">
+@import "assets/cssreset.css";
 #app {
-  
+    margin: 20px;
 }
 </style>
