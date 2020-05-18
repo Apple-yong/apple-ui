@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Apple-yong/apple-ui/issues"
   },
-  "homepage": "https://github.com/Apple-yong/apple-ui#readme"
+  "homepage": "https://github.com/Apple-yong/apple-ui#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
 }
