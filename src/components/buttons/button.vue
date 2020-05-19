@@ -26,7 +26,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-    @import "../styles/_var.scss";
+    @import "../../styles/_var.scss";
     .icon {
         width: 1em;
         height: 1em;

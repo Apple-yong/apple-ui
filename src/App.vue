@@ -1,15 +1,15 @@
 <template>
   <div id="app">
     <gbutton icon="set" icon-position="right">按钮</gbutton>
-    <gbutton icon="set" icon-position="left">按钮</gbutton>
+    <gbutton>按钮</gbutton>
     <gbutton icon="set" icon-position="right">按钮</gbutton>
     <gbutton icon="set" icon-position="left">按钮</gbutton>
-    <gbutton icon="set" icon-position="left">按钮</gbutton>
+    <gbutton icon="set"></gbutton>
   </div>
 </template>
 
 <script>
-import gbutton from "./components/button.vue";
+import gbutton from "./components/buttons/button.vue";
 
 export default {
   name: "App",
