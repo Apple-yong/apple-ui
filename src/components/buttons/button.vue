@@ -1,8 +1,8 @@
 <template>
-        <button class="g-button" :class="{[`icon-${iconPosition}`]: true}">
-            <svg v-if="icon" class="icon" aria-hidden="true">
-                <use :xlink:href="` #i-${icon} `" ></use>
-            </svg>
+        <button class="g-button" :class="{[`icon-${iconPosition}`]: true}"
+            @click="$emit('click')">
+            <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
+            <g-icon name="loading" v-if="loading" class="loading icon"></g-icon>
             <!-- 如果加了内容就要用slot显示 -->
             <div class="g-button-content">
                 <slot></slot>
@@ -11,9 +11,22 @@
 </template>
 
 <script>
+import gIcon from "./icon"
 export default {
   name: "gbutton",
-  props: ['icon', 'iconPosition'],
+  components: {
+    gIcon
+  },
+  props: {
+      icon: {},
+      loading: {
+          type: Boolean,
+          default: false
+      },
+      iconPosition: {
+          default: 'left'
+      }
+  },
   // 引入在线JS
   mounted() {
     var element = document.createElement("script");
@@ -27,13 +40,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
     @import "../../styles/_var.scss";
-    .icon {
-        width: 1em;
-        height: 1em;
-        vertical-align: -0.15em;
-        fill: currentColor;
-        overflow: hidden;
+    @keyframes spin {
+        0%{ transform: rotate(0deg); }
+        100%{ transform: rotate(360deg); }
     }
+    
     .g-button{
         font-size: $font-size; 
         height: $button-height; 
@@ -63,6 +74,9 @@ export default {
             .g-button-content{
                 order: 1;
             }
+        }
+        .loading{
+            animation: spin 1s infinite linear
         }
     }
 </style>

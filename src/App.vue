@@ -1,20 +1,27 @@
 <template>
   <div id="app">
-    <gbutton icon="set" icon-position="right">按钮</gbutton>
-    <gbutton>按钮</gbutton>
-    <gbutton icon="set" icon-position="right">按钮</gbutton>
-    <gbutton icon="set" icon-position="left">按钮</gbutton>
-    <gbutton icon="set"></gbutton>
+    <g-button icon="set" icon-position="right">按钮</g-button>
+    <g-button>按钮</g-button>
+    <g-button icon="set" icon-position="right">按钮</g-button>
+    <g-button icon="set" icon-position="left">按钮</g-button>
+    <g-button icon-position="right">加载中</g-button>
+    <g-button icon="set" :loading="loading1" @click="loading1 = !loading1">jzz</g-button>
   </div>
 </template>
 
 <script>
-import gbutton from "./components/buttons/button.vue";
+import gButton from "./components/buttons/button.vue";
+
 
 export default {
   name: "App",
+  data() {
+      return {
+          loading1: false
+      }
+  },
   components: {
-    gbutton
+    gButton
   }
 };
 </script>
