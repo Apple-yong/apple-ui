@@ -10,6 +10,7 @@ describe("button.vue的测试", () => {
               icon: 'set'
           }
       })
+      // 获取use标签内容
       const use = (button.find('svg')).find('use')
       expect(use.attributes('href')).to.equal(' #i-set ')
   });
