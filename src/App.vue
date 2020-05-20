@@ -11,6 +11,7 @@
       <g-button>更多</g-button>
       <g-button icon="right">下一页</g-button>
     </g-button-group>
+    <div id="test"></div>
   </div>
 </template>
 

@@ -39,7 +39,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-    @import "../../styles/_var.scss";
+    @import "../../styles/var.scss";
     @keyframes spin {
         0%{ transform: rotate(0deg); }
         100%{ transform: rotate(360deg); }

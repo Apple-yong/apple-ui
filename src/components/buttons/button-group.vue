@@ -16,7 +16,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-    @import "../../styles/_var.scss";
+    @import "../../styles/var.scss";
     .g-button-group {
         display: inline-flex;
         vertical-align: middle;

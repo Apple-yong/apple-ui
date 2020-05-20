@@ -1,13 +1,17 @@
 import { expect } from "chai";
-import { shallowMount } from "@vue/test-utils";
-import HelloWorld from "@/components/HelloWorld.vue";
+import { mount } from "@vue/test-utils";
 
-describe("HelloWorld.vue", () => {
+
+describe("button.vue", () => {
   it("renders props.msg when passed", () => {
-    const msg = "new message";
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg }
-    });
-    expect(wrapper.text()).to.include(msg);
+      const button = mount({
+          propsData: {
+              icon: 'settings'
+          }
+      })
+      button.$mount('#test')
+      let useElement = button.$el.querySelector('use')
+      let href = useElement.getAttribute('xlink:href')
+      expect(href).to.eq('#i-settings')
   });
 });
