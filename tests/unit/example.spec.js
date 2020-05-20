@@ -1,17 +1,16 @@
+/* eslint-disable */
 import { expect } from "chai";
 import { mount } from "@vue/test-utils";
+import gbutton from "@/components/buttons/button.vue"
 
-
-describe("button.vue", () => {
-  it("renders props.msg when passed", () => {
-      const button = mount({
+describe("button.vue的测试", () => {
+  it("button.vue的测试", () => {
+      const button = mount(gbutton, {
           propsData: {
-              icon: 'settings'
+              icon: 'set'
           }
       })
-      button.$mount('#test')
-      let useElement = button.$el.querySelector('use')
-      let href = useElement.getAttribute('xlink:href')
-      expect(href).to.eq('#i-settings')
+      const use = (button.find('svg')).find('use')
+      expect(use.attributes('href')).to.equal(' #i-set ')
   });
 });
