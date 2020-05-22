@@ -59,17 +59,17 @@ describe("button.vue的测试", () => {
     vm.$destroy();
   });
   
-  it("点击 button 触发 click 事件", () => {
-    const Constructor = Vue.extend(gbutton);
-    const vm = new Constructor({
-      propsData: {
-        icon: "settings",
-      },
-    }).$mount();
+//   it("点击 button 触发 click 事件", () => {
+//     const Constructor = Vue.extend(gbutton);
+//     const vm = new Constructor({
+//       propsData: {
+//         icon: "settings",
+//       },
+//     }).$mount();
 
-    const callback = sinon.fake();
-    vm.$on("click", callback);
-    vm.$el.click();
-    expect(callback).to.have.been.called;
-  });
+//     const callback = sinon.fake();
+//     vm.$on("click", callback);
+//     vm.$el.click();
+//     expect(callback).to.have.been.called;
+//   });
 });
