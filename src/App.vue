@@ -1,5 +1,40 @@
 <template>
     <div id="app">
+        <div style="border: 1px solid black;">
+            <g-row gutter="10">
+                <g-col>1</g-col>
+                <g-col>2</g-col>
+            </g-row>
+            <g-row gutter="10">
+                <g-col>1</g-col>
+                <g-col>2</g-col>
+                <g-col>3</g-col>
+            </g-row>
+            <g-row gutter="10">
+                <g-col>1</g-col>
+                <g-col>2</g-col>
+                <g-col>3</g-col>
+                <g-col>4</g-col>
+            </g-row>
+            <g-row gutter="10">
+                <g-col span="1">1</g-col>
+                <g-col span="8" offset="1">11</g-col>
+            </g-row>
+            <g-row gutter="10">
+                <g-col span="2">1</g-col>
+                <g-col span="8">11</g-col>
+            </g-row>
+            <g-row gutter="10">
+                <g-col span="2">1</g-col>
+                <g-col span="6" offset="2">11</g-col>
+            </g-row>
+            <g-row gutter="10">
+                <g-col span="1">1</g-col>
+                <g-col span="4" offset="1">11</g-col>
+                <g-col span="4" offset="1">11</g-col>
+            </g-row>
+        </div>
+        <hr />
         <div class="box">
             <g-input value="但分" readonly></g-input>
             <g-input value="但分" disabled></g-input>
@@ -34,19 +69,23 @@
 import gButton from "./components/buttons/button.vue";
 import gButtonGroup from "./components/buttons/button-group";
 import gInput from "./components/input/input";
+import gRow from "./components/colRow/row";
+import gCol from "./components/colRow/col";
 
 export default {
     name: "App",
     data() {
         return {
             loading1: false,
-            message: 'hi'
+            message: "hi"
         };
     },
     components: {
         gButton,
         gButtonGroup,
-        gInput
+        gInput,
+        gRow,
+        gCol
     },
     created() {
         setTimeout(() => {

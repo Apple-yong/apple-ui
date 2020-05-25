@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "test": "karma start --open"
+    "test": "karma start"
   },
   "dependencies": {
     "core-js": "^3.6.4",
