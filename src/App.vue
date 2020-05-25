@@ -8,6 +8,11 @@
             <g-input value="但分" error="不能少于两个字"></g-input>
             <g-input value="王" @change="inputChange"></g-input>
         </div>
+        <div class="box">
+            <g-input v-model="message"></g-input>
+            <p>{{message}}</p>
+            <button @click="message+=1">+1</button>
+        </div>
 
         <div style="margin: 20px">
             <g-button icon="set" icon-position="right">按钮</g-button>
@@ -34,7 +39,8 @@ export default {
     name: "App",
     data() {
         return {
-            loading1: false
+            loading1: false,
+            message: 'hi'
         };
     },
     components: {
